@@ -12,6 +12,7 @@ arg softwares_dir
 run apt-get update
 run apt-get install -y vim
 run apt-get install -y wget
+run apt-get install -y git
 run apt-get install -y sudo
 
 # User
