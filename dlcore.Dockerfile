@@ -13,6 +13,7 @@ run apt-get update
 run apt-get install -y vim
 run apt-get install -y wget
 run apt-get install -y git
+run apt-get install -y libgl1-mesa-glx
 run apt-get install -y sudo
 
 # User
@@ -38,7 +39,19 @@ run echo "\nyes\n$softwares_dir/Installations/anaconda3\nyes\n" |bash $softwares
 run bash -c "source ~/.bashrc" 
 run echo "conda deactivate" >> ~/.bashrc
 ## PyTorch1.4.0
-run $softwares_dir/Installations/anaconda3/bin/conda create -n PyTorch1.4.0 cudatoolkit=10.1 pyyaml=5.3.1 python=3.8 pytorch=1.4.0 torchvision=0.5.0 -c pytorch -c nvidia
+run $softwares_dir/Installations/anaconda3/bin/conda create \
+    -n PyTorch1.4.0 \
+    pandas=1.1.3 \
+    opencv=4.2.0 \
+    cudatoolkit=10.1 \
+    pyyaml=5.3.1 \
+    python=3.8 \
+    pytorch=1.4.0 \
+    torchvision=0.5.0 \
+    -c pytorch \
+    -c nvidia \
+    -c conda-forge \
+    -c anaconda
 ## Clean
 run rm -rf $softwares_dir/Packages/*
 
