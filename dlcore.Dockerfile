@@ -40,14 +40,17 @@ run bash -c "source ~/.bashrc"
 run echo "conda deactivate" >> ~/.bashrc
 ## PyTorch1.4.0
 run $softwares_dir/Installations/anaconda3/bin/conda create \
-    -n PyTorch1.4.0 \
-    pandas=1.1.3 \
+    -n algorithm \
+    tensorflow=1.15.0 \
+    numpy=1.16.6 \
+    tensorboard=1.15.0 \
+    pandas=1.2.3 \
     opencv=4.2.0 \
     cudatoolkit=10.1 \
     pyyaml=5.3.1 \
-    python=3.8 \
-    pytorch=1.4.0 \
-    torchvision=0.5.0 \
+    python=3.7 \
+    pytorch=1.8.0 \
+    torchvision=0.2.2 \
     -c pytorch \
     -c nvidia \
     -c conda-forge \
