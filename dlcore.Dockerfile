@@ -40,14 +40,14 @@ run bash -c "source ~/.bashrc"
 ## PyTorch1.4.0
 run $softwares_dir/Installations/anaconda3/bin/conda create \
     -n algorithm \
-    tensorflow=1.15.0 \
+    tensorflow-gpu=2.2.0 \
     numpy=1.16.6 \
-    tensorboard=1.15.0 \
+    tensorboard=2.6.0 \
     pandas=1.2.3 \
     opencv=4.2.0 \
     cudatoolkit=10.1 \
     pyyaml=5.3.1 \
-    python=3.7 \
+    python=3.8 \
     pytorch=1.7.0 \
     torchvision=0.8.1 \
     -c pytorch \
