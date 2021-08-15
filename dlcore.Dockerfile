@@ -37,7 +37,6 @@ run mkdir -p $softwares_dir/Packages && mkdir -p $softwares_dir/Installations
 add Anaconda*.sh $softwares_dir/Packages
 run echo "\nyes\n$softwares_dir/Installations/anaconda3\nyes\n" |bash $softwares_dir/Packages/Anaconda*.sh
 run bash -c "source ~/.bashrc" 
-run echo "conda deactivate" >> ~/.bashrc
 ## PyTorch1.4.0
 run $softwares_dir/Installations/anaconda3/bin/conda create \
     -n algorithm \
@@ -49,12 +48,13 @@ run $softwares_dir/Installations/anaconda3/bin/conda create \
     cudatoolkit=10.1 \
     pyyaml=5.3.1 \
     python=3.7 \
-    pytorch=1.8.0 \
-    torchvision=0.2.2 \
+    pytorch=1.7.0 \
+    torchvision=0.8.1 \
     -c pytorch \
     -c nvidia \
     -c conda-forge \
     -c anaconda
+run echo "conda activate algorithm" >> ~/.bashrc
 ## Clean
 run rm -rf $softwares_dir/Packages/*
 
