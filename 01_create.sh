@@ -6,6 +6,6 @@ sudo docker run \
     --name dlcore \
     --gpus all \
     -p 6001:6001 \
-    -v /home/young/Data/Media:/home/young/Data/Media \
+    -v /media/young/OuterspaceTech./Data/Media:/home/young/Data/Media \
     --privileged=true \
     -dit dlcore:base 
