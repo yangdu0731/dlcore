@@ -8,8 +8,23 @@ arg user_group
 arg user_dir
 arg softwares_dir
 
+arg server
+arg server_port
+arg local_address
+arg local_port
+arg password
+arg timeout
+arg method
+
 # System
 run apt-get update
+run apt-get install -y systemctl
+run apt-get install -y shadowsocks-libev && \
+echo "{\"server\":\""$server"\",\"server_port\":"$server_port",\"local_address\":\""$local_address"\",\"local_port\":"$local_port",\"password\":\"$password\",\"timeout\":"$timeout",\"method\":\""$method"\"}" >> /etc/shadowsocks-libev/local.json && \
+sed -i "s/%i/local/g" /lib/systemd/system/shadowsocks-libev-local@.service
+run apt-get install -y python3-pip
+run pip install genpac
+run pip install --upgrade genpac
 run apt-get install -y vim
 run apt-get install -y wget
 run apt-get install -y git
@@ -28,7 +43,10 @@ echo "$user_name\n$user_name\n" |passwd $user_name
 user $user_name
 workdir $user_dir
 run echo "PS1='\e[1;37m[\e[m\e[1;32m\u\e[m\e[1;33m@\e[m\e[m\e[1;35mdlcore\e[m \e[4m\`pwd\`\e[m\e[1;37m]\e[m\e[1;36m\e[m\n$'" >> ~/.bashrc && \
-echo "alias ll='ls -alFhX'" >> ~/.bashrc
+echo "alias ll='ls -alFhX'" >> ~/.bashrc && \
+echo "echo "$user_name" |sudo -S systemctl start shadowsocks-libev-local@." >> ~/.bashrc && \
+echo 'genpac --pac-proxy "SOCKS5 127.0.0.1:1080" --gfwlist-proxy="SOCKS5 127.0.0.1:1080" --gfwlist-url=https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt --output="~/autoproxy.pac"' >> ~/.bashrc && \
+echo "clear" >> ~/.bashrc
 run echo "set nu\nset ts=4\nset expandtab\nset autoindent" >> ~/.vimrc
 
 # Softwares
