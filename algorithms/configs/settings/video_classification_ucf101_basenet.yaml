@@ -1,0 +1,14 @@
+dataset: !include "ucf101.yaml"
+network: !include "basenet.yaml"
+
+train:
+  optimizer: "sgd"
+  momentum: 0.9
+  weight_decay: 1e-4
+  batch_size: 64
+  learning_rate: 1e-2
+  epochs: [8, 12, 15]
+
+val:
+  batch_size: 32
+  epochs: 1

@@ -1,0 +1,7 @@
+backbone:
+  arch: "resnet50"
+  pretrain: True
+  finetune: False
+  dropout: 0.5
+
+modules:  

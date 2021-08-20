@@ -1,0 +1,22 @@
+train:
+  num_classes: 101
+  type: "video_frames"
+  format: "image_%04d.jpg"
+  dataset_dir: "/home/young/Data/Media/Images/ucf101/rgb"
+  info_dir: "/home/young/Data/Media/Images/ucf101/info/train_split1.txt"
+  data_size: [1, 1, 4, 256, 320] # [N, C, T, H, W]
+  stride: 2
+  input_size: [1, 1, 4, 224, 224] # [N, C, T, H, W]
+  transform: "Normalize,RandomCrop"
+
+val:
+  num_classes: 101
+  type: "video_frames"
+  format: "image_%04d.jpg"
+  dataset_dir: "/home/young/Data/Media/Images/ucf101/rgb"
+  info_dir: "/home/young/Data/Media/Images/ucf101/info/val_split1.txt"
+  data_size: [5, 1, 4, 256, 320] # [N, C, T, H, W]
+  stride: 2
+  input_size: [5, 1, 4, 256, 256] # [N, C, T, H, W]
+  transform: "Normalize,CenterCrop"
+
