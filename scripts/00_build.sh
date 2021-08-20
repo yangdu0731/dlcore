@@ -16,7 +16,7 @@ softwares_dir="$user_dir/Softwares"
 
 # web
 server="108.61.186.100" # TODO
-server_password='k1)X.5VB.31p!17r' # TODO
+server_password='$9yZZ)o6NQtWC+Cx' # TODO
 server_port="9269"
 shadowsocks_password="d15882706805"
 timeout="60"

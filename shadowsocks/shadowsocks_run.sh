@@ -13,5 +13,6 @@ fi
 chmod +x shadowsocks_all.sh
 echo -e "4\n$password\n$server_port\n$method\nn\n" |sudo ./shadowsocks_all.sh 2>&1 |tee shadowsocks_all.log
 
-chmod +x shadowsocks_bbr.sh
-echo -e "y\n" |sudo ./shadowsocks_bbr.sh
+# Speed up
+#chmod +x shadowsocks_bbr.sh
+#echo -e "y\n" |sudo ./shadowsocks_bbr.sh
