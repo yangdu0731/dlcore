@@ -13,6 +13,7 @@ user_group=${id_info[2]#*=}
 user_group=${user_group%%(*}
 user_dir="/home/$user_name/Data"
 softwares_dir="$user_dir/Softwares"
+source_dir="/media/young/OuterspaceTech./Data/Softwares/Packages"
 
 # web
 server="108.61.186.100" # TODO
@@ -37,7 +38,7 @@ sudo docker build \
     --build-arg softwares_dir=$softwares_dir \
     -f dlcore.Dockerfile \
     -t dlcore:base \
-    $softwares_dir/Packages
+    $source_dir
 
 # server    
 ssh-keygen -f "/home/$user_name/.ssh/known_hosts" -R $server
