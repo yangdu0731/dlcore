@@ -8,6 +8,3 @@ Creating container
 Running container with individual terminal
 # 03_clean.sh
 Clearing container and image
-# ss_server.sh
-build ss server vps
-
