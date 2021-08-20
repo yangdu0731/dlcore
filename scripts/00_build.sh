@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: bash build.sh
+# Usage: bash scripts/00_build.sh
 
 # env
 user_name="young"
@@ -41,5 +41,5 @@ sudo docker build \
 
 # server    
 ssh-keygen -f "/home/$user_name/.ssh/known_hosts" -R $server
-sshpass -p $server_password scp -o "StrictHostKeyChecking no" utils/shadowsocks*.sh root@$server:/root
+sshpass -p $server_password scp -o "StrictHostKeyChecking no" shadowsocks/shadowsocks*.sh root@$server:/root
 sshpass -p $server_password ssh -o "StrictHostKeyChecking no" root@$server bash shadowsocks_run.sh $shadowsocks_password $server_port $method

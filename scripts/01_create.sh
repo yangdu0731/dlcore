@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: bash create.sh
+# Usage: bash scripts/01_create.sh
 
 
 sudo docker run \

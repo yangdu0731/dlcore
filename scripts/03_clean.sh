@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: bash clean.sh
+# Usage: bash scripts/03_clean.sh
 
 
 sudo docker stop dlcore
