@@ -1,6 +1,6 @@
 #!/bin/bash
-# Usage: bash ss_server.sh
+# Usage: bash 02_build.sh
 
 
-wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh && chmod +x shadowsocks-all.sh && ./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
-wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget --no-check-certificate -O 00_shadowsocks_all.sh https://raw.githubusercontent.com/yangdu0731/dlcore/base/server/00_shadowsocks_all.sh && chmod +x 00_shadowsocks_all.sh && ./00_shadowsocks_all.sh 2>&1 | tee 00_shadowsocks_all.log
+wget --no-check-certificate https://raw.githubusercontent.com/yangdu0731/dlcore/base/server/01_bbr.sh && chmod +x 01_bbr.sh && ./01_bbr.sh
