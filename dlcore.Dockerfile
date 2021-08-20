@@ -10,9 +10,7 @@ arg softwares_dir
 
 arg server
 arg server_port
-arg local_address
-arg local_port
-arg password
+arg shadowsocks_password
 arg timeout
 arg method
 
@@ -20,7 +18,7 @@ arg method
 run apt-get update
 run apt-get install -y systemctl
 run apt-get install -y shadowsocks-libev && \
-echo "{\"server\":\""$server"\",\"server_port\":"$server_port",\"local_address\":\""$local_address"\",\"local_port\":"$local_port",\"password\":\"$password\",\"timeout\":"$timeout",\"method\":\""$method"\"}" >> /etc/shadowsocks-libev/local.json && \
+echo "{\"server\":\""$server"\",\"server_port\":"$server_port",\"local_address\":\"0.0.0.0\",\"local_port\":1080,\"password\":\"$shadowsocks_password\",\"timeout\":"$timeout",\"method\":\""$method"\"}" >> /etc/shadowsocks-libev/local.json && \
 sed -i "s/%i/local/g" /lib/systemd/system/shadowsocks-libev-local@.service
 run apt-get install -y python3-pip
 run pip install genpac
