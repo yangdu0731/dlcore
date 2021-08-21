@@ -9,6 +9,7 @@ sudo docker run \
     -p 1080:1080 \
     -p 1080:1080/udp \
     -v /media/young/OuterspaceTech./Data/Media:/home/young/Data/Media \
-    -v /media/young/OuterspaceTech./Data/Documents/Projects/dlcore/algorithms:/home/young/Data/Documents/Projects/dlcore/algorithms \
+    -v /media/young/OuterspaceTech./Data/Documents:/home/young/Data/Documents \
+    -v /media/young/OuterspaceTech./Data/Softwares/Packages:/home/young/Data/Softwares/Packages \
     --privileged=true \
     -dit dlcore:base 
