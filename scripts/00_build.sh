@@ -17,7 +17,7 @@ source_dir="/media/young/OuterspaceTech./Data/Softwares/Packages"
 
 # web
 server="108.61.186.100" # TODO
-server_password='1Tn=r{)H]HKCr5gu' # TODO
+server_password='Pc8*M$+bs[JA*JY(' # TODO
 server_port="9269"
 shadowsocks_password="d15882706805"
 timeout="60"

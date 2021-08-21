@@ -43,7 +43,10 @@ workdir $user_dir
 run echo "PS1='\e[1;37m[\e[m\e[1;32m\u\e[m\e[1;33m@\e[m\e[m\e[1;35mdlcore\e[m \e[4m\`pwd\`\e[m\e[1;37m]\e[m\e[1;36m\e[m\n$'" >> ~/.bashrc && \
 echo "alias ll='ls -alFhX'" >> ~/.bashrc && \
 echo "echo "$user_name" |sudo -S systemctl start shadowsocks-libev-local@." >> ~/.bashrc && \
-echo 'genpac --pac-proxy "SOCKS5 127.0.0.1:1080" --gfwlist-proxy="SOCKS5 127.0.0.1:1080" --gfwlist-url=https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt --output="~/autoproxy.pac"' >> ~/.bashrc && \
+echo 'echo ""' >> ~/.bashrc && \
+echo 'if [[ ! -f ~/autoproxy.pac  ]];then' >> ~/.bashrc && \
+echo '  genpac --pac-proxy "SOCKS5 127.0.0.1:1080" --gfwlist-proxy="SOCKS5 127.0.0.1:1080" --gfwlist-url=https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt --output="~/autoproxy.pac"' >> ~/.bashrc && \
+echo 'fi' >> ~/.bashrc && \
 echo "clear" >> ~/.bashrc
 run echo "set nu\nset ts=4\nset expandtab\nset autoindent" >> ~/.vimrc
 
